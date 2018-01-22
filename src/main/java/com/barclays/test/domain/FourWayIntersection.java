@@ -23,6 +23,10 @@ public class FourWayIntersection implements Intersection {
 			//TODO: throw Exception and exit form the program
 		}
 		this.roadsMap = roadsMap;
+		roadsMap.get(Direction.NORTH).setSignal(northSignal);
+		roadsMap.get(Direction.SOUTH).setSignal(southSignal);
+		roadsMap.get(Direction.EAST).setSignal(eastSignal);
+		roadsMap.get(Direction.WEST).setSignal(westSignal);
 	}
 
 	@Override
@@ -35,33 +39,6 @@ public class FourWayIntersection implements Intersection {
 		signalGate.await();
 	}
 
-	@Override
-	public void moveVehiclesAtIntersection() throws InterruptedException {
-		if (northSignal.getSignalColor().equals(SignalColor.GREEN)) {
-			if (northSignal.getPreviousSignalColor().equals(SignalColor.RED)) {
-				Thread.sleep(1000);
-			}
-			roadsMap.get(Direction.NORTH).moveTraffic();
-		}
-		if (southSignal.getSignalColor().equals(SignalColor.GREEN)) {
-			if (southSignal.getPreviousSignalColor().equals(SignalColor.RED)) {
-				Thread.sleep(1000);
-			}
-			roadsMap.get(Direction.SOUTH).moveTraffic();
-		}
-		if (eastSignal.getSignalColor().equals(SignalColor.GREEN)) {
-			if (eastSignal.getPreviousSignalColor().equals(SignalColor.RED)) {
-				Thread.sleep(1000);
-			}
-			roadsMap.get(Direction.EAST).moveTraffic();
-		}
-		if (westSignal.getSignalColor().equals(SignalColor.GREEN)) {
-			if (westSignal.getPreviousSignalColor().equals(SignalColor.RED)) {
-				Thread.sleep(1000);
-			}
-			roadsMap.get(Direction.WEST).moveTraffic();
-		}
-		Thread.sleep(1000);
-	}
+	
 
 }

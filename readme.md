@@ -1,3 +1,5 @@
+This is a maven project. To execute, simply run the SignalOperations.java after importing the project in eclipse.
+
 ### Coding problem: Traffic Signals
 
 Write a program that controls the traffic signals for a four-way intersection. Initially, we consider traffic flowing in straight lines only, no turns. The four directions are S(outhbound) and N(orthbound) on Snell Rd; and W(estbound) and E(astbound) on Weaver Rd. The traffic lights should obey the following rules:

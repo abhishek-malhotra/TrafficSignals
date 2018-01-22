@@ -29,19 +29,17 @@ public class SignalOperations {
 		ExecutorService ex = Executors.newFixedThreadPool(4);
 		
 		ex.execute(northSnellRoad);
-		/*ex.execute(southSnellRoad);
+		ex.execute(southSnellRoad);
 		ex.execute(eastWeaverRoad);
-		ex.execute(westWeaverRoad);*/
+		ex.execute(westWeaverRoad);
 		
 		fourWayIntersection.startIntersectionSignals();
 		
 
 		for (int i = 0; i < 20; i++) {
-
 			System.out.println(
 					i + ": N = " + northSnellRoad.getVehicleCount() + "; S = " + southSnellRoad.getVehicleCount()
 							+ "; E = " + eastWeaverRoad.getVehicleCount() + "; W=" + westWeaverRoad.getVehicleCount());
-			fourWayIntersection.moveVehiclesAtIntersection();
 			Thread.sleep(1000);
 		}
 		System.exit(0);
